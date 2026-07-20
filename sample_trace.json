@@ -1,0 +1,204 @@
+{
+  "trace_id": "TRACE-VOLTAIR-001",
+  "generated": "2026-07-07T12:00:00Z",
+  "workflow": "governance_determination_demo",
+  "external_bindings": [
+    {
+      "event_id": "GD-2026-07-07-001",
+      "source": "VoltAir",
+      "type": "governance_determination",
+      "hash": "7a1f8c3e9d2b5a6f4e8c1d2b3a4f5e6d7c8b9a0f1e2d3c4b5a6f7e8d9c0b1a2f3"
+    }
+  ],
+  "steps": [
+    {
+      "step_index": 1,
+      "timestamp": "2026-07-07T12:00:00Z",
+      "phase": "authorisation",
+      "state": "ADMISSIBLE",
+      "admissible": true,
+      "reason_code": "NONE",
+      "evidence": {
+        "permit_id": "PERMIT-001",
+        "policy_version": "v1",
+        "delegation_chain": ["root", "admin", "finance"],
+        "delegation_depth": 3,
+        "evidence_freshness": "valid"
+      },
+      "authority_context": {
+        "policy_version": "v1",
+        "delegation_chain": ["root", "admin", "finance"],
+        "delegation_depth": 3
+      },
+      "gate_state": {
+        "state": "ADMISSIBLE",
+        "admissible": true,
+        "reason_code": "NONE"
+      }
+    },
+    {
+      "step_index": 2,
+      "timestamp": "2026-07-07T12:05:00Z",
+      "phase": "execution",
+      "state": "ADMISSIBLE",
+      "admissible": true,
+      "reason_code": "NONE",
+      "evidence": {
+        "permit_id": "PERMIT-001",
+        "policy_version": "v1",
+        "delegation_chain": ["root", "admin", "finance"],
+        "delegation_depth": 3,
+        "evidence_freshness": "valid"
+      },
+      "authority_context": {
+        "policy_version": "v1",
+        "delegation_chain": ["root", "admin", "finance"],
+        "delegation_depth": 3
+      },
+      "gate_state": {
+        "state": "ADMISSIBLE",
+        "admissible": true,
+        "reason_code": "NONE"
+      }
+    },
+    {
+      "step_index": 3,
+      "timestamp": "2026-07-07T12:06:00Z",
+      "phase": "execution",
+      "state": "DEGRADED",
+      "admissible": true,
+      "reason_code": "EVIDENCE_DRIFT",
+      "evidence": {
+        "permit_id": "PERMIT-001",
+        "policy_version": "v2",
+        "delegation_chain": ["root", "admin", "finance"],
+        "delegation_depth": 3,
+        "evidence_freshness": "stale",
+        "note": "Evidence expired. Input data no longer representative."
+      },
+      "authority_context": {
+        "policy_version": "v2",
+        "delegation_chain": ["root", "admin", "finance"],
+        "delegation_depth": 3
+      },
+      "gate_state": {
+        "state": "DEGRADED",
+        "admissible": true,
+        "reason_code": "EVIDENCE_DRIFT"
+      }
+    },
+    {
+      "step_index": 4,
+      "timestamp": "2026-07-07T12:07:00Z",
+      "phase": "execution",
+      "state": "UNKNOWN",
+      "admissible": false,
+      "reason_code": "DELEGATION_DRIFT",
+      "evidence": {
+        "permit_id": "PERMIT-001",
+        "policy_version": "v2",
+        "delegation_chain": ["root", "admin"],
+        "delegation_depth": 2,
+        "evidence_freshness": "stale",
+        "note": "Delegation chain shortened from 3 to 2"
+      },
+      "authority_context": {
+        "policy_version": "v2",
+        "delegation_chain": ["root", "admin"],
+        "delegation_depth": 2
+      },
+      "gate_state": {
+        "state": "UNKNOWN",
+        "admissible": false,
+        "reason_code": "DELEGATION_DRIFT"
+      }
+    },
+    {
+      "step_index": 5,
+      "timestamp": "2026-07-07T12:08:00Z",
+      "phase": "commit_attempt",
+      "state": "DENIED",
+      "admissible": false,
+      "reason_code": "EVIDENCE_DRIFT",
+      "evidence": {
+        "permit_id": "PERMIT-001",
+        "policy_version": "v2",
+        "delegation_chain": ["root", "admin"],
+        "delegation_depth": 2,
+        "evidence_freshness": "expired",
+        "note": "Input data expired. Evidence no longer trustworthy."
+      },
+      "authority_context": {
+        "policy_version": "v2",
+        "delegation_chain": ["root", "admin"],
+        "delegation_depth": 2
+      },
+      "gate_state": {
+        "state": "DENIED",
+        "admissible": false,
+        "reason_code": "EVIDENCE_DRIFT"
+      }
+    },
+    {
+      "step_index": 6,
+      "timestamp": "2026-07-07T12:09:00Z",
+      "phase": "recovery",
+      "state": "RECOVERY",
+      "admissible": true,
+      "reason_code": "NONE",
+      "evidence": {
+        "permit_id": "PERMIT-002",
+        "policy_version": "v2",
+        "delegation_chain": ["root", "admin", "finance"],
+        "delegation_depth": 3,
+        "evidence_freshness": "valid",
+        "reauthorized": true,
+        "note": "Fresh evidence re-attested. Input data refreshed."
+      },
+      "authority_context": {
+        "policy_version": "v2",
+        "delegation_chain": ["root", "admin", "finance"],
+        "delegation_depth": 3
+      },
+      "gate_state": {
+        "state": "RECOVERY",
+        "admissible": true,
+        "reason_code": "NONE"
+      }
+    },
+    {
+      "step_index": 7,
+      "timestamp": "2026-07-07T12:10:00Z",
+      "phase": "commit",
+      "state": "ADMISSIBLE",
+      "admissible": true,
+      "reason_code": "NONE",
+      "evidence": {
+        "permit_id": "PERMIT-002",
+        "policy_version": "v2",
+        "delegation_chain": ["root", "admin", "finance"],
+        "delegation_depth": 3,
+        "evidence_freshness": "valid"
+      },
+      "authority_context": {
+        "policy_version": "v2",
+        "delegation_chain": ["root", "admin", "finance"],
+        "delegation_depth": 3
+      },
+      "gate_state": {
+        "state": "ADMISSIBLE",
+        "admissible": true,
+        "reason_code": "NONE"
+      }
+    }
+  ],
+  "gate_consumable_state": {
+    "step": 7,
+    "state": "ADMISSIBLE",
+    "admissible": true,
+    "reason_code": "NONE",
+    "policy_version": "v2",
+    "delegation_depth": 3,
+    "evidence_freshness": "valid"
+  }
+}
