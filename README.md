@@ -9,6 +9,25 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.111-green?logo=fastapi)](https://fastapi.tiangolo.com/)
 
 ---
+## Why this project?
+
+This project demonstrates my ability to build production-grade software.
+
+Skills demonstrated:
+
+- FastAPI backend architecture
+- REST API design
+- React frontend
+- State management
+- Authentication
+- PDF generation
+- Data visualization
+- Enterprise dashboard UI
+- Docker
+- Clean project structure
+
+The domain (AI runtime governance) is specialized, but the engineering patterns are applicable to many enterprise SaaS products.
+
 
 ## 🚀 What is Runtime Authority Cloud?
 
